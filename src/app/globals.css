@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #FBF9F4;
+  color: #0e1b33;
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid #2750f2;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+::selection { background: #2750f2; color: #fff; }
+
+.chat-prose a { color: #1b3cc4; text-decoration: underline; text-underline-offset: 3px; }
+.chat-prose p + p { margin-top: 0.75rem; }
+.chat-prose ul, .chat-prose ol { margin-top: 0.5rem; }
+.chat-prose ul + p, .chat-prose ol + p, .chat-prose p + ul, .chat-prose p + ol { margin-top: 0.75rem; }
+.chat-prose li::marker { color: #8a92a3; }
+
+.chat-scroll { scrollbar-width: thin; scrollbar-color: #d9d3c5 transparent; }
+
+.font-display { font-weight: 600; font-optical-sizing: auto; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:root {
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-body: "Figtree", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
